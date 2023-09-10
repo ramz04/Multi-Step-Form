@@ -4,6 +4,7 @@ import { Ubuntu } from 'next/font/google'
 const ubuntu = Ubuntu({
   weight: ["400","500","700"],
   display: "swap",
+  subsets: ["latin"],
 })
 
 export const metadata = {
