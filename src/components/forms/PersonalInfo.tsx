@@ -34,16 +34,16 @@ export default function PersonalInfo() {
   };
 
   return (
-    <div>
+    <div className="py-3">
       <div className="w-full space-y-2 rounded-lg bg-white px-4 py-6 shadow-sm">
-        <h1 className="text-xl font-bold tracking-wide text-Marineblue">
+        <h1 className="text-2xl font-bold tracking-wide text-Marineblue">
           Personal Info
         </h1>
-        <p className="w-[80%] tracking-wide text-Coolgray">
+        <p className="w-[85%] tracking-wide text-Coolgray">
           Please provide your name, email address, and phone number.
         </p>
         <div>
-          <div className="space-y-3">
+          <div className="space-y-4 py-2">
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="name" className="text-sm text-Marineblue">

@@ -35,3 +35,5 @@ export type FormItems = {
   isCustomizableProfile: boolean;
   isOnlineService: boolean;
 };
+
+export const sideBar = ["Your Info", "Select Plan", "Add-Ons", "Summary"];
