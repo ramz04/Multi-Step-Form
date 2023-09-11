@@ -8,6 +8,9 @@ import PersonalInfo from "@/components/forms/PersonalInfo";
 import { FormItems, planOptions, sideBar } from "../../types";
 import { FormEvent, useState } from "react";
 import useMultiForm from "./hooks/useMultiForm";
+import Plan from "@/components/forms/Plan";
+import AddOns from "@/components/forms/AddOns";
+import FinishingUp from "@/components/forms/FinishingUp";
 
 const initialValues: FormItems = {
   name: "",
@@ -71,14 +74,22 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <form className="flex h-full flex-col ">
+      <form className="flex h-full flex-col " onSubmit={handleSubmit}>
         <div className="-mt-28 flex justify-center px-3 py-6">
-          <PersonalInfo />
+          {currentIndex === 0 && <PersonalInfo />}
+          {currentIndex === 1 && <Plan />}
+          {currentIndex === 2 && <AddOns />}
+          {currentIndex === 3 && <FinishingUp />}
         </div>
         <div className="mt-auto flex justify-between">
           <div className=" flex items-end justify-start p-4">
             {!isFirstStep && (
-              <Button type="button" variant="outline" className="">
+              <Button
+                onClick={goBackwards}
+                type="button"
+                variant="outline"
+                className=""
+              >
                 Go Back
               </Button>
             )}
