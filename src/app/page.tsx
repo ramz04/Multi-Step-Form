@@ -36,7 +36,7 @@ export default function Home() {
     isFirstStep,
     isLastStep,
     goToSection,
-  } = useMultiForm(sideBar.length);
+  } = useMultiForm(sideBar.length + 1);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
