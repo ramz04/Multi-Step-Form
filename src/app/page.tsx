@@ -35,6 +35,7 @@ export default function Home() {
     goForwards,
     isFirstStep,
     isLastStep,
+    isConfirmation,
     goToSection,
   } = useMultiForm(sideBar.length + 1);
 
