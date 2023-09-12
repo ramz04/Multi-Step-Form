@@ -7,6 +7,7 @@ import type { FieldValues } from "react-hook-form";
 import { resolve } from "path";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { FormItems } from "../../../types";
 
 const personalInfoSchema = z.object({
   name: z.string().length(100),
@@ -16,7 +17,16 @@ const personalInfoSchema = z.object({
 
 type personalInfoSchema = z.infer<typeof personalInfoSchema>;
 
-export default function PersonalInfo() {
+type StepProps = FormItems & {
+  updateForm: (item: Partial<FormItems>) => void;
+};
+
+export default function PersonalInfo({
+  name,
+  email,
+  phone,
+  updateForm,
+}: StepProps) {
   const {
     register,
     handleSubmit,

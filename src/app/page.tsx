@@ -75,11 +75,17 @@ export default function Home() {
         </div>
       </div>
       <form className="flex h-full flex-col " onSubmit={handleSubmit}>
-        <div className="-mt-28 flex justify-center px-3 py-6">
-          {currentIndex === 0 && <PersonalInfo />}
-          {currentIndex === 1 && <Plan />}
-          {currentIndex === 2 && <AddOns />}
-          {currentIndex === 3 && <FinishingUp />}
+        <div className="-mt-28 px-3 py-6">
+          {currentIndex === 0 && (
+            <PersonalInfo {...formData} updateForm={updateForm} />
+          )}
+          {currentIndex === 1 && <Plan {...formData} updateForm={updateForm} />}
+          {currentIndex === 2 && (
+            <AddOns {...formData} updateForm={updateForm} />
+          )}
+          {currentIndex === 3 && (
+            <FinishingUp {...formData} updateForm={updateForm} />
+          )}
         </div>
         <div className="mt-auto flex justify-between">
           <div className=" flex items-end justify-start p-4">
