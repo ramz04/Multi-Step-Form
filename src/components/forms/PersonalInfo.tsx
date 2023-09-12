@@ -44,8 +44,8 @@ export default function PersonalInfo({
   };
 
   return (
-    <div className="py-3">
-      <div className="w-full space-y-2 rounded-lg bg-white px-4 py-6 shadow-sm">
+    <div className="py-2">
+      <div className="w-full space-y-2 rounded-lg bg-white px-4 py-4 shadow-sm">
         <h1 className="text-2xl font-bold tracking-wide text-Marineblue">
           Personal Info
         </h1>
