@@ -1,5 +1,6 @@
 import React from "react";
 import { FormItems } from "../../../types";
+import { Checkbox } from "../ui/checkbox";
 
 type StepProps = FormItems & {
   updateForm: (item: Partial<FormItems>) => void;
@@ -24,7 +25,11 @@ export default function AddOns({
         <div className="space-y-3 pt-1">
           <div
             className={`flex gap-3 rounded-md border border-gray-300  px-3 py-3`}
-          ></div>
+          >
+            <div>
+              <Checkbox className="h-4 w-4" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
