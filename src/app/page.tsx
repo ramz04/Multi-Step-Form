@@ -87,7 +87,7 @@ export default function Home() {
             <FinishingUp {...formData} updateForm={updateForm} />
           )}
         </div>
-        <div className="mt-auto flex justify-between">
+        <div className="mt-auto flex justify-between bg-white">
           <div className=" flex items-end justify-start p-4">
             {!isFirstStep && (
               <Button

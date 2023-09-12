@@ -21,12 +21,18 @@ export default function Plan({ plan, planLength, updateForm }: StepProps) {
         <p className="w-[85%] tracking-wide text-Coolgray">
           You have the option of monthly or yearly billing.
         </p>
-        <div className="space-y-3 pt-2">
-          <div className="flex gap-3 rounded-md border border-Coolgray px-3 py-4">
+        <div className="space-y-3 pt-1">
+          <div
+            className={`flex gap-3 rounded-md border  px-3 py-3 ${
+              plan === "Arcade"
+                ? "border-Marineblue bg-Alabaster"
+                : "border-gray-300"
+            }`}
+          >
             <div>
               <Image src={arcade} alt="Arcade" />
             </div>
-            <div>
+            <div className="cursor-pointer">
               <label htmlFor="Arcade">
                 <h2 className="font-bold">Arcade</h2>
                 <p className="text-sm text-Coolgray">
@@ -50,11 +56,17 @@ export default function Plan({ plan, planLength, updateForm }: StepProps) {
               )}
             </div>
           </div>
-          <div className="flex gap-4 rounded-md border border-Coolgray px-3 py-4">
+          <div
+            className={`${
+              plan === "Advanced"
+                ? "border-Marineblue bg-Alabaster"
+                : "border-gray-300"
+            } flex  gap-4 rounded-md border px-3 py-3`}
+          >
             <div>
               <Image src={advanced} alt="Advanced" />
             </div>
-            <div>
+            <div className="cursor-pointer">
               <label htmlFor="Advanced">
                 <h2 className="font-bold">Advanced</h2>
                 <p className="text-sm text-Coolgray">
@@ -78,28 +90,34 @@ export default function Plan({ plan, planLength, updateForm }: StepProps) {
               )}
             </div>
           </div>
-          <div className="flex gap-4 rounded-md border border-Coolgray px-3 py-4">
+          <div
+            className={`${
+              plan === "Pro"
+                ? "border-Marineblue bg-Alabaster"
+                : "border-gray-300"
+            } flex gap-4 rounded-md border px-3 py-3`}
+          >
             <div>
-              <Image src={arcade} alt="Arcade" />
+              <Image src={pro} alt="Pro" />
             </div>
-            <div>
-              <label htmlFor="Arcade">
-                <h2 className="font-bold">Arcade</h2>
+            <div className="cursor-pointer">
+              <label htmlFor="Pro">
+                <h2 className="font-bold">Pro</h2>
                 <p className="text-sm text-Coolgray">
                   $
                   {!planLength
-                    ? planOptions.Arcade.monthly
-                    : planOptions.Arcade.yearly}
+                    ? planOptions.Pro.monthly
+                    : planOptions.Pro.yearly}
                   /{!planLength ? "mo" : "yr"}
                 </p>
               </label>
               <input
-                id="Arcade"
+                id="Pro"
                 name="plan"
                 type="radio"
-                checked={plan === "Arcade"}
+                checked={plan === "Pro"}
                 className="hidden"
-                onChange={(e) => updateForm({ plan: "Arcade" })}
+                onChange={(e) => updateForm({ plan: "Pro" })}
               />
               {planLength && (
                 <p className="text-sm text-Marineblue">2 months free</p>
