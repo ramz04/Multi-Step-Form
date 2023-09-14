@@ -25,7 +25,11 @@ export default function AddOns({
         </p>
         <div className="space-y-3 pt-1">
           <div
-            className={`flex gap-3 rounded-md border border-gray-300  px-3 py-3`}
+            className={`flex gap-3 rounded-md border  px-3 py-3 ${
+              isOnlineService === true
+                ? "border-Marineblue bg-Alabaster"
+                : "border-gray-300"
+            }`}
           >
             <div className="flex w-full items-center gap-3">
               <div>
@@ -57,7 +61,11 @@ export default function AddOns({
             </div>
           </div>
           <div
-            className={`flex gap-3 rounded-md border border-gray-300  px-3 py-3`}
+            className={`flex gap-3 rounded-md border  px-3 py-3 ${
+              isLargerStorage === true
+                ? "border-Marineblue bg-Alabaster"
+                : "border-gray-300"
+            }`}
           >
             <div className="flex w-full items-center gap-3">
               <div>
@@ -75,11 +83,21 @@ export default function AddOns({
                 <h1 className="font-bold text-Marineblue">Larger storage</h1>
                 <p className="text-sm text-Coolgray">Extra 1TB of cloud save</p>
               </div>
-              <p className="ml-auto text-sm text-Purplishblue">+$2/mo</p>
+              <p className="ml-auto text-sm text-Purplishblue">
+                +$
+                {!planLength
+                  ? planOptions.largerStorage.monthly
+                  : planOptions.largerStorage.yearly}
+                /{!planLength ? "mo" : "yrs"}
+              </p>
             </div>
           </div>
           <div
-            className={`flex gap-3 rounded-md border border-gray-300  px-3 py-3`}
+            className={`flex gap-3 rounded-md border  px-3 py-3 ${
+              isCustomizableProfile === true
+                ? "border-Marineblue bg-Alabaster"
+                : "border-gray-300"
+            }`}
           >
             <div className="flex w-full items-center gap-3">
               <div>
@@ -101,7 +119,13 @@ export default function AddOns({
                   Custom theme on your profile
                 </p>
               </div>
-              <p className="ml-auto text-sm text-Purplishblue">+$2/mo</p>
+              <p className="ml-auto text-sm text-Purplishblue">
+                +$
+                {!planLength
+                  ? planOptions.customizableProfile.monthly
+                  : planOptions.customizableProfile.yearly}
+                /{!planLength ? "mo" : "yrs"}
+              </p>
             </div>
           </div>
         </div>
