@@ -31,6 +31,8 @@ export default function AddOns({
                 <Checkbox
                   className="h-[18px] w-[18px] rounded"
                   checked={isOnlineService}
+                  id="isOnlineService"
+                  name="isOnlineService"
                   onCheckedChange={(newIsOnlineServices) =>
                     updateForm({
                       isOnlineService: newIsOnlineServices,
