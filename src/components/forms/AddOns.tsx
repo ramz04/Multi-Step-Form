@@ -1,6 +1,7 @@
 import React from "react";
 import { FormItems } from "../../../types";
 import { Checkbox } from "../ui/checkbox";
+import { planOptions } from "../../../types";
 
 type StepProps = FormItems & {
   updateForm: (item: Partial<FormItems>) => void;
@@ -30,12 +31,12 @@ export default function AddOns({
               <div>
                 <Checkbox
                   className="h-[18px] w-[18px] rounded"
-                  checked={isOnlineService}
+                  checked={isOnlineService === true}
                   id="isOnlineService"
                   name="isOnlineService"
-                  onCheckedChange={(newIsOnlineServices) =>
+                  onCheckedChange={(e) =>
                     updateForm({
-                      isOnlineService: newIsOnlineServices,
+                      isOnlineService: e === true,
                     })
                   }
                 />
@@ -54,7 +55,10 @@ export default function AddOns({
           >
             <div className="flex w-full items-center gap-3">
               <div>
-                <Checkbox className="h-[18px] w-[18px] rounded" />
+                <Checkbox
+                  className="h-[18px] w-[18px] rounded"
+                  checked={isLargerStorage === true}
+                />
               </div>
               <div className="">
                 <h1 className="font-bold text-Marineblue">Larger storage</h1>
