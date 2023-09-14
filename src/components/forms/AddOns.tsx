@@ -47,7 +47,13 @@ export default function AddOns({
                   Access to multiplayer games
                 </p>
               </div>
-              <p className="ml-auto text-sm text-Purplishblue">+$1/mo</p>
+              <p className="ml-auto text-sm text-Purplishblue">
+                +$
+                {!planLength
+                  ? planOptions.onlineServices.monthly
+                  : planOptions.onlineServices.yearly}
+                /{!planLength ? "mo" : "yrs"}
+              </p>
             </div>
           </div>
           <div
@@ -77,7 +83,15 @@ export default function AddOns({
           >
             <div className="flex w-full items-center gap-3">
               <div>
-                <Checkbox className="h-[18px] w-[18px] rounded" />
+                <Checkbox
+                  className="h-[18px] w-[18px] rounded"
+                  checked={isCustomizableProfile === true}
+                  onCheckedChange={(e) =>
+                    updateForm({
+                      isCustomizableProfile: e === true,
+                    })
+                  }
+                />
               </div>
               <div className="">
                 <h1 className="font-bold text-Marineblue">
