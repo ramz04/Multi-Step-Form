@@ -58,6 +58,11 @@ export default function AddOns({
                 <Checkbox
                   className="h-[18px] w-[18px] rounded"
                   checked={isLargerStorage === true}
+                  onCheckedChange={(e) =>
+                    updateForm({
+                      isLargerStorage: e === true,
+                    })
+                  }
                 />
               </div>
               <div className="">
