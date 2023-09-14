@@ -41,7 +41,7 @@ export default function Home() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (isLastStep) return alert("congrats something");
+    // if (isLastStep) return alert("congrats something");
     goForwards();
   };
 
