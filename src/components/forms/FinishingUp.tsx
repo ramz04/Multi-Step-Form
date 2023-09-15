@@ -22,7 +22,7 @@ export default function FinishingUp({
         <p className="w-[85%] tracking-wide text-Coolgray">
           Double-check everything looks OK before confirming.
         </p>
-        <div className="flex items-center justify-start gap-2 rounded-md bg-Alabaster px-2 py-3 ">
+        <div className="space-y-3 divide-y divide-gray-200 rounded-lg bg-Alabaster px-3 py-3 ">
           <div className="flex w-full items-center justify-between">
             <div>
               <h2 className="font-bold text-Marineblue">Arcade (monthly)</h2>
@@ -30,7 +30,16 @@ export default function FinishingUp({
             </div>
             <p className="font-bold text-Marineblue">$9/mo</p>
           </div>
-          <hr />
+          <div className="space-y-1 py-2 text-Coolgray">
+            <div className="flex w-full items-center justify-between">
+              <p>Online Service</p>
+              <p className=" text-Marineblue ">$1/mo</p>
+            </div>
+            <div className="flex w-full items-center justify-between">
+              <p>Larger Storage</p>
+              <p className=" text-Marineblue ">$2/mo</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
