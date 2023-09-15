@@ -41,6 +41,10 @@ export default function FinishingUp({
             </div>
           </div>
         </div>
+        <div className="flex w-full items-center justify-between px-3 text-Coolgray">
+          <p>Total (per month)</p>
+          <p className="font-bold text-Purplishblue">$12/mo</p>
+        </div>
       </div>
     </div>
   );
